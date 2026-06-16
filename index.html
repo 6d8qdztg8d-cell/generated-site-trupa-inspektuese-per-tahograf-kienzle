@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Trupa inspektuese për Tahograf Kienzle</title>
+    <style>
+        body {
+            background-color: #0F0F0E;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', Helvetica, Arial, sans-serif;
+            max-width: 430px;
+            margin: 0 auto;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        header, .card, .action-buttons, .info-cards, .about, footer {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #C8FF00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0F0F0E;
+            font-weight: bold;
+        }
+        .badge {
+            background-color: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
+            padding: 4px 8px;
+            color: rgba(255,255,255,0.5);
+        }
+        .hero {
+            background-color: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 80px rgba(200,255,0,0.1);
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            color: #C8FF00;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            color: rgba(255,255,255,0.5);
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .button {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button.primary {
+            background-color: #C8FF00;
+            color: #0F0F0E;
+        }
+        .button.secondary {
+            background-color: rgba(255,255,255,0.04);
+            color: rgba(255,255,255,0.5);
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+        .button.primary:hover {
+            background-color: #a3e600;
+        }
+        .button.secondary:hover {
+            background-color: rgba(255,255,255,0.07);
+        }
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background-color: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 20px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card a {
+            color: #C8FF00;
+            text-decoration: none;
+        }
+        .about {
+            margin-bottom: 20px;
+        }
+        .about p {
+            color: rgba(255,255,255,0.5);
+        }
+        footer {
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="avatar">TI</div>
+        <div>
+            <h1>Trupa inspektuese për Tahograf Kienzle</h1>
+            <span class="badge">Business</span>
+        </div>
+    </header>
+    
+    <div class="hero card">
+        <h1>Kienzle KS</h1>
+        <p>Reliable & Accurate Tachograph Inspections</p>
+    </div>
+
+    <div class="action-buttons">
+        <a href="https://www.kienzle-ks.com" target="_blank" rel="noopener" class="button primary">Visit Us</a>
+        <a href="#contact" class="button secondary">Contact</a>
+    </div>
+
+    <div class="info-cards">
+        <div class="card">
+            <p>📍 Address</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener">View on Google Maps</a>
+        </div>
+        <div class="card">
+            <p>⏰ Business Hours</p>
+            <p>Mon - Fri: 09:00 - 17:00</p>
+        </div>
+        <div class="card">
+            <p>📞 Phone/Email</p>
+            <a href="tel:+123456789">+1 234 567 89</a><br>
+            <a href="mailto:info@domain.com">info@domain.com</a>
+        </div>
+    </div>
+
+    <div class="about card">
+        <p>Trupa inspektuese për Tahograf Kienzle is dedicated to providing reliable and precise tachograph inspections ensuring compliance and safety for all your commercial vehicle needs.</p>
+    </div>
+
+    <footer>
+        <p>Powered by DigitalFrame</p>
+    </footer>
+</body>
+</html>
