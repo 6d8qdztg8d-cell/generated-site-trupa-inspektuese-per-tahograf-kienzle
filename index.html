@@ -1,332 +1,187 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="sq"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>TACHO INSPECT | Trupa inspektuese për Tahograf Kienzle</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "tertiary-fixed-dim": "#b6c9d8",
-                    "on-secondary-fixed": "#1c1b1b",
-                    "on-secondary": "#313030",
-                    "error": "#ffb4ab",
-                    "inverse-primary": "#506600",
-                    "on-surface": "#e5e2e1",
-                    "surface-bright": "#3a3939",
-                    "on-secondary-container": "#b7b5b4",
-                    "on-tertiary-fixed": "#0b1d29",
-                    "surface-dim": "#131313",
-                    "on-tertiary-fixed-variant": "#374956",
-                    "inverse-on-surface": "#313030",
-                    "secondary": "#c8c6c5",
-                    "secondary-fixed-dim": "#c8c6c5",
-                    "error-container": "#93000a",
-                    "surface-container": "#201f1f",
-                    "on-error-container": "#ffdad6",
-                    "secondary-fixed": "#e5e2e1",
-                    "on-secondary-fixed-variant": "#474746",
-                    "primary-fixed": "#c3f400",
-                    "surface-container-highest": "#353534",
-                    "outline-variant": "#444933",
-                    "surface-variant": "#353534",
-                    "surface-tint": "#abd600",
-                    "surface-container-high": "#2a2a2a",
-                    "surface-container-lowest": "#0e0e0e",
-                    "tertiary-container": "#d2e5f5",
-                    "on-error": "#690005",
-                    "tertiary": "#ffffff",
-                    "secondary-container": "#474746",
-                    "on-tertiary": "#21323e",
-                    "inverse-surface": "#e5e2e1",
-                    "on-background": "#e5e2e1",
-                    "tertiary-fixed": "#d2e5f5",
-                    "primary": "#ffffff",
-                    "on-surface-variant": "#c4c9ac",
-                    "on-tertiary-container": "#556774",
-                    "background": "#131313",
-                    "surface-container-low": "#1c1b1b",
-                    "on-primary-fixed-variant": "#3c4d00",
-                    "on-primary-fixed": "#161e00",
-                    "primary-fixed-dim": "#abd600",
-                    "outline": "#8e9379",
-                    "primary-container": "#c3f400",
-                    "on-primary": "#283500",
-                    "on-primary-container": "#556d00",
-                    "surface": "#131313"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "base": "8px",
-                    "margin-mobile": "16px",
-                    "container-max": "1440px",
-                    "gutter": "24px",
-                    "margin-desktop": "40px"
-            },
-            "fontFamily": {
-                    "body-md": ["Inter"],
-                    "headline-lg": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "headline-lg-mobile": ["Inter"],
-                    "label-md": ["Inter"],
-                    "display-lg": ["Inter"],
-                    "label-sm": ["Inter"]
-            },
-            "fontSize": {
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Trupa inspektuese për Tahograf Kienzle</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0F0F0E;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', Helvetica, Arial, sans-serif;
+            max-width: 430px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            overflow-x: hidden;
         }
-        .glow-accent {
-            box-shadow: 0px 0px 12px rgba(204, 255, 0, 0.2);
+        header, .card, .info-card, .about-card, .footer {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
         }
-        .industrial-overlay {
-            background: linear-gradient(180deg, rgba(19, 19, 19, 0.4) 0%, rgba(19, 19, 19, 0.95) 100%);
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
-        .bento-card {
-            background: #121212;
-            border: 1px solid #1E1E1E;
+        header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #C8FF00;
+            color: #0F0F0E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+        .badge {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .hero {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 0 80px rgba(200, 255, 0, 0.1);
+        }
+        .tagline {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .button-row {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            flex: 1;
+            padding: 10px 0;
+            text-align: center;
+            border-radius: 14px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .primary-button {
+            background-color: #C8FF00;
+            color: #0F0F0E;
+        }
+        .secondary-button {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .button:hover {
+            filter: brightness(1.1);
+        }
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        .info-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 15px;
+        }
+        .info-card a {
+            color: #C8FF00;
+            text-decoration: none;
+        }
+        .info-card:hover {
+            filter: brightness(1.1);
+        }
+        .about-card {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .social-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            padding: 10px 14px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .social-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant">
-<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-container-max mx-auto">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
-<span class="font-display-lg text-headline-md-mobile tracking-tighter text-primary-fixed uppercase">TACHO INSPECT</span>
-</div>
-<div class="hidden md:flex gap-6 items-center">
-<a class="font-label-md text-primary-fixed transition-opacity hover:opacity-80" href="#">Home</a>
-<a class="font-label-md text-on-surface-variant transition-opacity hover:opacity-80" href="#about">Services</a>
-<a class="font-label-md text-on-surface-variant transition-opacity hover:opacity-80" href="#contact">Contact</a>
-</div>
-</div>
-</header>
-<main class="pt-16 pb-24">
-<!-- Hero Section -->
-<section class="relative h-[85vh] flex flex-col justify-end overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqi4wX0fvYCjEH1MqaP4SupkzQd5yx5T3HmldJbXbDQ9p9461zND8YN7TcwhZGRLzqtRhqc9dpK6yyireIoseeWP6uL0RVwarRmyBmLJdhir80gmKpfBYs0IFZvuQho8Il2xheolOPYLpxsn9DF8mtNsNMVHpaJOrs1NLg5BGHKrdKlUml_WI47hKEi3qPcs5j4QFrvF3X2pEv8cG5B_Kbd-OzXHPlgmqSXCqyyApCGVJRKGZUdGIPrZ_JccDZ8idwI0XyS9lo1Jc"/>
-<div class="absolute inset-0 industrial-overlay"></div>
-</div>
-<div class="relative z-10 px-margin-mobile pb-12 max-w-container-max mx-auto w-full">
-<div class="space-y-4 max-w-2xl">
-<span class="inline-block px-3 py-1 bg-primary-container/10 border border-primary-container/30 text-primary-fixed text-label-sm uppercase tracking-widest rounded-full">Licencuar &amp; Certifikuar</span>
-<h1 class="font-display-lg text-primary text-[42px] leading-[1.1] md:text-display-lg">Trupa inspektuese për Tahograf Kienzle</h1>
-<p class="font-body-lg text-secondary text-lg md:text-body-lg">Shërbim profesional dhe i certifikuar në Ferizaj. Sigurojmë përputhshmërinë ligjore dhe saktësinë teknike për mjetet tuaja transportuese.</p>
-</div>
-<!-- Primary Mobile Actions -->
-<div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-<a class="flex items-center justify-center gap-3 bg-primary-container text-on-primary-container h-14 rounded-xl font-label-md uppercase tracking-wide glow-accent active:scale-95 transition-transform" href="tel:+383000000">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">phone_in_talk</span>
-                        Telefono Tani
-                    </a>
-<a class="flex items-center justify-center gap-3 bg-transparent border border-outline text-primary h-14 rounded-xl font-label-md uppercase tracking-wide active:scale-95 transition-transform" href="https://maps.google.com" target="_blank">
-<span class="material-symbols-outlined">distance</span>
-                        Navigo te ne
-                    </a>
-</div>
-</div>
-</section>
-<!-- Bento Info Cards -->
-<section class="px-margin-mobile py-12 max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Location Card -->
-<div class="bento-card p-6 rounded-xl flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-fixed">location_on</span>
-</div>
-<div>
-<h3 class="font-headline-md text-primary mb-1">Adresa</h3>
-<p class="font-body-md text-secondary">Rr. Magjistralja Prishtinë-Shkup, Ferizaj, Kosovë</p>
-</div>
-</div>
-<!-- Hours Card -->
-<div class="bento-card p-6 rounded-xl flex flex-col gap-4">
-<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-fixed">schedule</span>
-</div>
-<div>
-<h3 class="font-headline-md text-primary mb-1">Orari</h3>
-<p class="font-body-md text-secondary">E hënë - E shtunë<br/>08:00 - 17:00</p>
-</div>
-</div>
-<!-- Status Card -->
-<div class="bento-card p-6 rounded-xl flex flex-col gap-4 border-l-4 border-l-primary-fixed">
-<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center">
-<span class="material-symbols-outlined text-primary-fixed">verified</span>
-</div>
-<div>
-<h3 class="font-headline-md text-primary mb-1">Statusi</h3>
-<p class="font-body-md text-secondary">Hapur për inspektime të rregullta dhe periodike.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- About Us Section -->
-<section class="px-margin-mobile py-16 bg-surface-container-low border-y border-outline-variant" id="about">
-<div class="max-w-3xl mx-auto text-center space-y-8">
-<div class="flex flex-col items-center gap-4">
-<div class="h-1 w-20 bg-primary-fixed rounded-full"></div>
-<h2 class="font-display-lg text-primary text-headline-lg-mobile md:text-headline-lg uppercase">Për Ne</h2>
-</div>
-<p class="font-body-lg text-on-surface-variant leading-relaxed">
-                    Jemi trupë inspektuese e licencuar, e specializuar për kontrollin dhe kalibrimin e tahografëve Kienzle. Me një përvojë të gjatë në industrinë e transportit, ne sigurojmë që çdo mjet i rëndë të jetë në përputhje me standardet më të larta të sigurisë dhe rregullat e trafikut rrugor në Kosovë.
-                </p>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8">
-<div class="space-y-1">
-<div class="text-primary-fixed font-display-lg text-3xl">10+</div>
-<div class="text-label-sm text-secondary uppercase">Vite Përvojë</div>
-</div>
-<div class="space-y-1">
-<div class="text-primary-fixed font-display-lg text-3xl">5k+</div>
-<div class="text-label-sm text-secondary uppercase">Inspektime</div>
-</div>
-<div class="space-y-1">
-<div class="text-primary-fixed font-display-lg text-3xl">100%</div>
-<div class="text-label-sm text-secondary uppercase">Saktësi</div>
-</div>
-<div class="space-y-1">
-<div class="text-primary-fixed font-display-lg text-3xl">A+</div>
-<div class="text-label-sm text-secondary uppercase">Licencim</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Services Preview / Gauge Simulation -->
-<section class="px-margin-mobile py-20 max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-<div class="space-y-6">
-<h2 class="font-headline-lg text-primary">Inspektimi Teknik i Tahografëve</h2>
-<ul class="space-y-4">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-fixed mt-1">check_circle</span>
-<span class="text-body-md text-secondary">Kalibrimi i tahografëve analogë dhe digjitalë.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-fixed mt-1">check_circle</span>
-<span class="text-body-md text-secondary">Verifikimi periodik sipas ligjeve në fuqi.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-fixed mt-1">check_circle</span>
-<span class="text-body-md text-secondary">Lëshimi i certifikatave zyrtare të inspektimit.</span>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary-fixed mt-1">check_circle</span>
-<span class="text-body-md text-secondary">Analizë teknike dhe këshillim për mjetet transportuese.</span>
-</li>
-</ul>
-</div>
-<div class="relative aspect-square bento-card rounded-full p-8 flex items-center justify-center group">
-<!-- Digital Instrument Simulation -->
-<div class="absolute inset-4 rounded-full border-2 border-outline-variant border-dashed group-hover:rotate-12 transition-transform duration-700"></div>
-<div class="relative z-10 text-center space-y-2">
-<div class="text-primary-fixed font-display-lg text-6xl">98.4</div>
-<div class="text-label-sm text-secondary uppercase tracking-[0.2em]">Compliance Index</div>
-<div class="w-32 h-1 bg-surface-container-highest mx-auto rounded-full mt-4 overflow-hidden">
-<div class="h-full bg-primary-fixed w-[98%] shadow-[0_0_10px_#CCFF00]"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-dim border-t border-outline-variant w-full mb-20 md:mb-0" id="contact">
-<div class="max-w-container-max mx-auto py-12 px-margin-mobile">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-<div class="space-y-6">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary-fixed text-3xl">precision_manufacturing</span>
-<span class="font-display-lg text-headline-md tracking-tighter text-primary-fixed">TACHO INSPECT</span>
-</div>
-<p class="text-on-surface-variant max-w-sm">Trupë inspektuese profesionale për sigurinë dhe pajtueshmërinë e mjeteve tuaja në rrugë.</p>
-</div>
-<div class="grid grid-cols-2 gap-8">
-<div class="space-y-4">
-<h4 class="font-label-md text-primary uppercase">Navigimi</h4>
-<nav class="flex flex-col gap-2">
-<a class="text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Kreu</a>
-<a class="text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors" href="#about">Për Ne</a>
-<a class="text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors" href="#contact">Kontakti</a>
-</nav>
-</div>
-<div class="space-y-4">
-<h4 class="font-label-md text-primary uppercase">Ligjore</h4>
-<nav class="flex flex-col gap-2">
-<a class="text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
-<a class="text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Terms of Service</a>
-<a class="text-label-sm text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Compliance Standards</a>
-</nav>
-</div>
-</div>
-</div>
-<div class="pt-8 border-t border-outline-variant text-center space-y-4">
-<p class="font-body-md text-label-sm text-on-surface-variant uppercase tracking-wider">© 2024 TACHO INSPECT. INDUSTRIAL COMPLIANCE SECURED.</p>
-</div>
-</div>
-</footer>
-<!-- Bottom Navigation (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-outline-variant shadow-md h-20 px-4 pb-2 flex justify-around items-center rounded-t-xl">
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-sm text-label-sm">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-200" href="#about">
-<span class="material-symbols-outlined">settings_input_component</span>
-<span class="font-label-sm text-label-sm">Services</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-200" href="https://maps.google.com">
-<span class="material-symbols-outlined">distance</span>
-<span class="font-label-sm text-label-sm">Location</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-200" href="tel:+383000000">
-<span class="material-symbols-outlined">phone_in_talk</span>
-<span class="font-label-sm text-label-sm">Contact</span>
-</a>
-</nav>
-<script>
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-8');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.bento-card, section h2, section p').forEach(el => {
-            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
-            observer.observe(el);
-        });
-    </script>
-</body></html>
+<body>
+    <header>
+        <div class="avatar">TI</div>
+        <div>
+            <div>Trupa inspektuese për Tahograf Kienzle</div>
+            <div class="badge">Business</div>
+        </div>
+    </header>
+    <div class="card hero">
+        Welcome to Trupa Inspektuese
+        <div class="tagline">Ensuring Your Journey is Safe</div>
+    </div>
+    <div class="button-row">
+        <a href="https://www.kienzle-ks.com" class="button primary-button" target="_blank" rel="noopener">Visit Website</a>
+        <a href="tel:+0123456789" class="button secondary-button" target="_blank" rel="noopener">Call Us</a>
+    </div>
+    <div class="info-cards">
+        <div class="info-card">
+            <span>📍 Address</span>
+            <a href="https://www.google.com/maps" target="_blank" rel="noopener">Open Maps</a>
+        </div>
+        <div class="info-card">
+            <span>⏰ Hours</span>
+            <span>9am - 5pm</span>
+        </div>
+        <div class="info-card">
+            <span>📞 Contact</span>
+            <a href="tel:+0123456789" target="_blank" rel="noopener">+0123456789</a>
+        </div>
+    </div>
+    <div class="about-card">
+        Trupa inspektuese për Tahograf Kienzle është e përkushtuar për të ofruar shërbime inspektimi të cilësisë së lartë për të ndihmuar në mbajtjen e rrugëve tona sa më të sigurt që të jetë e mundur.
+    </div>
+    <div class="social-links">
+        <a href="https://www.facebook.com" class="social-btn" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.twitter.com" class="social-btn" target="_blank" rel="noopener">Twitter</a>
+    </div>
+    <div class="footer">
+        Powered by DigitalFrame
+    </div>
+</body>
+</html>
