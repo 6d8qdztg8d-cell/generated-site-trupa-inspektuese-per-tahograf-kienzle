@@ -1,187 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Trupa inspektuese për Tahograf Kienzle</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0F0F0E;
-            color: white;
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', Helvetica, Arial, sans-serif;
-            max-width: 430px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 20px;
-            overflow-x: hidden;
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KIENZLE | Precision Tachograph Inspection</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-surface": "#191c1e",
+                "surface-container": "#eceef0",
+                "surface-container-high": "#e6e8ea",
+                "on-tertiary": "#ffffff",
+                "outline": "#74777f",
+                "secondary-fixed-dim": "#b8c8da",
+                "surface": "#f7f9fb",
+                "error-container": "#ffdad6",
+                "on-tertiary-container": "#949fb4",
+                "secondary": "#50606f",
+                "on-secondary-fixed-variant": "#394857",
+                "secondary-fixed": "#d4e4f6",
+                "surface-container-low": "#f2f4f6",
+                "primary": "#002046",
+                "on-error-container": "#93000a",
+                "on-tertiary-fixed-variant": "#3c475a",
+                "surface-container-highest": "#e0e3e5",
+                "tertiary-fixed": "#d8e3fa",
+                "primary-container": "#1b365d",
+                "surface-tint": "#465f88",
+                "tertiary-container": "#2b3648",
+                "inverse-on-surface": "#eff1f3",
+                "on-surface-variant": "#44474e",
+                "on-primary-fixed": "#001b3d",
+                "on-tertiary-fixed": "#111c2c",
+                "surface-bright": "#f7f9fb",
+                "on-error": "#ffffff",
+                "primary-fixed": "#d6e3ff",
+                "on-primary-fixed-variant": "#2e476f",
+                "on-secondary-container": "#556474",
+                "on-primary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#c4c6cf",
+                "error": "#ba1a1a",
+                "surface-dim": "#d8dadc",
+                "on-primary-container": "#87a0cd",
+                "tertiary-fixed-dim": "#bcc7dd",
+                "on-secondary-fixed": "#0d1d2a",
+                "on-secondary": "#ffffff",
+                "on-background": "#191c1e",
+                "inverse-surface": "#2d3133",
+                "surface-variant": "#e0e3e5",
+                "secondary-container": "#d1e1f4",
+                "inverse-primary": "#aec7f7",
+                "primary-fixed-dim": "#aec7f7",
+                "background": "#f7f9fb",
+                "tertiary": "#162132"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "unit-4": "16px",
+                "unit-8": "32px",
+                "base": "4px",
+                "unit-1": "4px",
+                "unit-2": "8px",
+                "unit-6": "24px",
+                "unit-12": "48px",
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                "body-lg": ["Inter"],
+                "label-sm": ["JetBrains Mono"],
+                "headline-lg": ["Inter"],
+                "label-md": ["JetBrains Mono"],
+                "headline-xl": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
         }
-        header, .card, .info-card, .about-card, .footer {
-            animation: fadeIn 1s ease forwards;
-            opacity: 0;
+        
+        /* Smooth scrolling for anchor links */
+        html { scroll-behavior: smooth; }
+
+        /* Custom micro-interaction for cards */
+        .technical-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .avatar {
-            width: 40px;
-            height: 40px;
-            background-color: #C8FF00;
-            color: #0F0F0E;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-weight: bold;
-        }
-        .badge {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 2px 8px;
-            border-radius: 12px;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-        }
-        .card {
-            background-color: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .hero {
-            text-align: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0 0 80px rgba(200, 255, 0, 0.1);
-        }
-        .tagline {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        .button-row {
-            display: flex;
-            gap: 10px;
-        }
-        .button {
-            flex: 1;
-            padding: 10px 0;
-            text-align: center;
-            border-radius: 14px;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .primary-button {
-            background-color: #C8FF00;
-            color: #0F0F0E;
-        }
-        .secondary-button {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        .button:hover {
-            filter: brightness(1.1);
-        }
-        .info-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-        .info-card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 20px;
-            padding: 15px;
-        }
-        .info-card a {
-            color: #C8FF00;
-            text-decoration: none;
-        }
-        .info-card:hover {
-            filter: brightness(1.1);
-        }
-        .about-card {
-            background-color: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 20px;
-            padding: 20px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .social-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        .social-btn {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            text-align: center;
-            padding: 10px 14px;
-            border-radius: 14px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .social-btn:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        .footer {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 12px;
+        .technical-card:active {
+            transform: scale(0.98);
         }
     </style>
-</head>
-<body>
-    <header>
-        <div class="avatar">TI</div>
-        <div>
-            <div>Trupa inspektuese për Tahograf Kienzle</div>
-            <div class="badge">Business</div>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant/30 flex items-center justify-between px-margin-mobile h-12 w-full">
+<div class="flex items-center gap-unit-2">
+<span class="material-symbols-outlined text-primary" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h1 class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">KIENZLE</h1>
+</div>
+<div class="flex items-center gap-unit-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-unit-1 rounded" data-icon="search">search</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-12 pb-16">
+<!-- Hero Section -->
+<section class="relative min-h-[618px] flex flex-col items-center justify-center text-center px-margin-mobile py-unit-12 bg-surface overflow-hidden">
+<!-- Subtle Tech Background Effect -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #002046 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="z-10 flex flex-col items-center gap-unit-6 max-w-md">
+<div class="inline-flex items-center gap-unit-2 bg-primary-container px-unit-4 py-unit-1 rounded-full text-on-primary-container">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm">CERTIFIED INSPECTION CENTER</span>
+</div>
+<div>
+<h2 class="font-headline-xl text-headline-xl text-primary leading-none mb-unit-2">KIENZLE</h2>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface-variant max-w-[280px] mx-auto">
+                        Precision Tachograph Inspection &amp; Calibration
+                    </p>
+</div>
+<div class="w-full h-[240px] rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm relative mt-unit-4">
+<img class="w-full h-full object-cover" data-alt="A macro close-up of a high-precision digital tachograph interface with clean, sharp typography and mechanical calibration tools in the blurred background. The lighting is bright and clinical, emphasizing the deep navy and slate grey tones of the equipment. The visual style is modern, technical, and conveys absolute reliability and Swiss engineering excellence in an industrial laboratory setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuComc7JhNWhHCzd_hHLFJYx28JAtuDuEihWERztDDxEmgiN4apzPMYynJvcpVYbwyMLCssbNu5ndCc-dtBfQX5kcDo1s0X6zYeGoETKNlYbO6qLiocekSiLjPtpW72KFup8g8mIw7GcPyO2b9B7YH4PSpDJiXpwkQWjdqqIiur3S1oLEAhy5k99Dhfi3dF8__Id69NSffgcpuO0Wx_zfvmk5vj276_z4d82Zewa100-_nYdjDvPkEMqxV0gBJrqm25SjagmDnjkozw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+<a class="w-full py-unit-4 bg-primary text-on-primary font-bold rounded-lg active:opacity-80 transition-opacity flex items-center justify-center gap-unit-2" href="#contact">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+                    BOOK AN INSPECTION
+                </a>
+</div>
+</section>
+<!-- Expertise (About) Section -->
+<section class="px-margin-mobile py-unit-12 bg-surface-container-low border-y border-outline-variant/20" id="expertise">
+<div class="flex flex-col gap-unit-8">
+<div class="flex flex-col gap-unit-2">
+<span class="font-label-sm text-label-sm text-primary tracking-widest">OUR EXPERTISE</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Professional Tachograph Services</h3>
+</div>
+<div class="grid grid-cols-1 gap-unit-4">
+<!-- Technical Feature Card 1 -->
+<div class="technical-card p-unit-6 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-sm flex flex-col gap-unit-2">
+<div class="flex items-center gap-unit-3 text-primary mb-unit-2">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label-md text-label-md">SWISS PRECISION</span>
+</div>
+<p class="text-on-surface-variant font-body-md">
+                            Adhering to the highest standards of Swiss engineering for absolute calibration accuracy and mechanical integrity.
+                        </p>
+</div>
+<!-- Technical Feature Card 2 -->
+<div class="technical-card p-unit-6 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-sm flex flex-col gap-unit-2">
+<div class="flex items-center gap-unit-3 text-primary mb-unit-2">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-label-md text-label-md">LEGAL COMPLIANCE</span>
+</div>
+<p class="text-on-surface-variant font-body-md">
+                            Ensuring all transport businesses meet Kosovo's stringent regulatory requirements for tachograph operations.
+                        </p>
+</div>
+</div>
+<div class="p-unit-6 border-l-4 border-primary bg-primary-container/10 rounded-r-lg">
+<p class="text-on-surface-variant italic font-body-md">
+                        "Reliability isn't just a promise; it's our technical baseline for every inspection performed."
+                    </p>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="px-margin-mobile py-unit-12 bg-surface" id="location">
+<div class="flex flex-col gap-unit-6">
+<div class="flex flex-col gap-unit-2">
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Visit Our Center</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Location &amp; Facilities</h3>
+</div>
+<div class="rounded-xl overflow-hidden border border-outline-variant/30 bg-surface-container-high h-48 relative">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="A precise, minimalist architectural map view of Ferizaj, Kosovo, featuring clean lines and technical slate-blue topography. The style is cartographic and modern, using the brand's primary color palette for highlights and showing the industrial zone with high-contrast road networks and professional aesthetic." data-location="Ferizaj, Kosovo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgsFrZWCRucpXYMKeDhIj6pg41WxRb0T0lLPCzZAQnZVAe6cF_5xK7FNzQ7Kk_y9K7wyb4mJBgRyHP0KYgk2FeRST6i2C-tzWeMgKcAleRedhU0Gu_CXpzNt-anROu_ZbDq7t3hBW6wu0QNBoUi4oIEbvfTIcEvqflsS-THD-e-mj3dqveKH6o1gIVuAMcLXd0-lsIVG5oYuggAO1E6ZctuGsRd9cEH7O6clCshhv1JqmlR2N3FApt36LIPRwN5sC_oDyIWhZeIYY"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-on-primary p-unit-4 rounded-full shadow-lg flex flex-col items-center">
+<span class="material-symbols-outlined text-[32px]" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-unit-4">
+<div class="flex items-start gap-unit-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="pin_drop">pin_drop</span>
+<div>
+<p class="font-label-md text-label-md text-primary">OFFICE ADDRESS</p>
+<p class="text-on-surface-variant font-body-md">Magjistralja Ferizaj-Prishtinë, Ferizaj, Kosovo</p>
+</div>
+</div>
+<div class="flex items-start gap-unit-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-md text-label-md text-primary">WORKING HOURS</p>
+<p class="text-on-surface-variant font-body-md">Mon - Fri: 08:00 - 17:00<br/>Sat: 09:00 - 14:00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="px-margin-mobile py-unit-12 bg-primary text-on-primary" id="contact">
+<div class="flex flex-col gap-unit-8">
+<div class="text-center flex flex-col gap-unit-2">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile">Get in Touch</h3>
+<p class="text-on-primary-container font-body-md">Connect with our technicians for immediate support or scheduling.</p>
+</div>
+<div class="flex flex-col gap-unit-4">
+<a class="flex items-center justify-between p-unit-4 bg-on-primary text-primary rounded-lg font-bold transition-transform active:scale-95" href="tel:+38344123456">
+<div class="flex items-center gap-unit-4">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+<span>Call Now</span>
+</div>
+<span class="font-label-md text-label-md">+383 44 123 456</span>
+</a>
+<a class="flex items-center justify-between p-unit-4 border border-on-primary/30 text-on-primary rounded-lg transition-transform active:scale-95" href="mailto:info@kienzle-ks.com">
+<div class="flex items-center gap-unit-4">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span>Email</span>
+</div>
+<span class="font-label-md text-label-md">info@kienzle-ks.com</span>
+</a>
+</div>
+<div class="pt-unit-6 border-t border-on-primary/10 text-center">
+<p class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-widest">Rapid Response Unit Available</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile py-unit-8 flex flex-col items-center gap-unit-4 text-center mb-16 bg-surface-container-highest">
+<div class="font-headline-md text-headline-md text-primary font-bold">KIENZLE</div>
+<div class="flex gap-unit-4 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:underline" href="#">Privacy Policy</a>
+<a class="hover:underline" href="#">Terms of Service</a>
+<a class="hover:underline" href="#">Imprint</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant opacity-90">
+            © 2024 Kienzle Tachograph Inspection. Ferizaj, Kosovo.
         </div>
-    </header>
-    <div class="card hero">
-        Welcome to Trupa Inspektuese
-        <div class="tagline">Ensuring Your Journey is Safe</div>
-    </div>
-    <div class="button-row">
-        <a href="https://www.kienzle-ks.com" class="button primary-button" target="_blank" rel="noopener">Visit Website</a>
-        <a href="tel:+0123456789" class="button secondary-button" target="_blank" rel="noopener">Call Us</a>
-    </div>
-    <div class="info-cards">
-        <div class="info-card">
-            <span>📍 Address</span>
-            <a href="https://www.google.com/maps" target="_blank" rel="noopener">Open Maps</a>
-        </div>
-        <div class="info-card">
-            <span>⏰ Hours</span>
-            <span>9am - 5pm</span>
-        </div>
-        <div class="info-card">
-            <span>📞 Contact</span>
-            <a href="tel:+0123456789" target="_blank" rel="noopener">+0123456789</a>
-        </div>
-    </div>
-    <div class="about-card">
-        Trupa inspektuese për Tahograf Kienzle është e përkushtuar për të ofruar shërbime inspektimi të cilësisë së lartë për të ndihmuar në mbajtjen e rrugëve tona sa më të sigurt që të jetë e mundur.
-    </div>
-    <div class="social-links">
-        <a href="https://www.facebook.com" class="social-btn" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.twitter.com" class="social-btn" target="_blank" rel="noopener">Twitter</a>
-    </div>
-    <div class="footer">
-        Powered by DigitalFrame
-    </div>
-</body>
-</html>
+</footer>
+<!-- BottomNavBar (Persistent for Mobile Canvas) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-2 pb-2 bg-surface border-t border-outline-variant/30 bg-surface/95 backdrop-blur-md z-50">
+<!-- Expertise - Active State Map (Home/Main Context) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors px-4 py-1" href="#expertise">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="font-label-sm text-label-sm">Expertise</span>
+</a>
+<!-- Contact -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors px-4 py-1" href="#contact">
+<span class="material-symbols-outlined" data-icon="contact_phone">contact_phone</span>
+<span class="font-label-sm text-label-sm">Contact</span>
+</a>
+<!-- Location -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors px-4 py-1" href="#location">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-sm text-label-sm">Location</span>
+</a>
+<!-- About (Implicit Link to Home/Top) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-label-sm text-label-sm">About</span>
+</a>
+</nav>
+<script>
+        // Simple scroll spy for active navigation state (visual only)
+        window.addEventListener('scroll', () => {
+            const sections = ['expertise', 'contact', 'location'];
+            const navItems = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const element = document.getElementById(section);
+                const sectionTop = element.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section;
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'rounded-full');
+                item.classList.add('text-on-surface-variant');
+                const label = item.querySelector('span:last-child').innerText.toLowerCase();
+                if (label === current) {
+                    item.classList.add('bg-secondary-container', 'text-on-secondary-container', 'rounded-full');
+                    item.classList.remove('text-on-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>
