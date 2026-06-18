@@ -1,161 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Trupa inspektuese për Tahograf Kienzle</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', Helvetica, Arial, sans-serif;
-            background-color: #0F0F0E;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 430px;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
+
+<html class="scroll-smooth" lang="sq"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trupa Inspektuese Kienzle - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#a0c9ff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "secondary-container": "#e2dfde",
+                        "primary-fixed-dim": "#ffb4ab",
+                        "on-primary-fixed": "#410002",
+                        "surface-bright": "#faf9f9",
+                        "surface-light": "#F5F5F5",
+                        "primary-fixed": "#ffdad6",
+                        "on-secondary-container": "#636262",
+                        "outline-variant": "#e8bcb7",
+                        "secondary-fixed": "#e5e2e1",
+                        "success-whatsapp": "#25D366",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#00497f",
+                        "surface-container-highest": "#e3e2e2",
+                        "primary-container": "#e2001a",
+                        "surface-tint": "#c00014",
+                        "brand-facebook": "#1877F2",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-high": "#e9e8e8",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#936e6a",
+                        "on-tertiary-container": "#f2f5ff",
+                        "secondary": "#5f5e5e",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-dim": "#dbdad9",
+                        "on-primary-container": "#fff3f1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-surface": "#303031",
+                        "surface-variant": "#e3e2e2",
+                        "inverse-primary": "#ffb4ab",
+                        "background": "#faf9f9",
+                        "tertiary": "#005a9b",
+                        "on-tertiary-fixed": "#001c37",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#93000d",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "industrial-black": "#000000",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f5f3f3",
+                        "primary": "#b40012",
+                        "background-white": "#FFFFFF",
+                        "tertiary-fixed": "#d2e4ff",
+                        "tertiary-container": "#0073c4",
+                        "on-surface-variant": "#5e3f3b",
+                        "on-surface": "#1b1c1c",
+                        "surface-container": "#efeded",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "surface": "#faf9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "1rem",
+                        "container-margin": "1.25rem",
+                        "gutter": "1rem",
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "2rem",
+                        "tap-target-min": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "label-bold": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["24px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-xl": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
             }
         }
-        header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .avatar {
-            width: 40px;
-            height: 40px;
-            background-color: #C8FF00;
-            color: #0F0F0E;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .badge {
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 2px 8px;
-            font-size: 14px;
-            margin-left: auto;
-        }
-        .hero {
-            background-color: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 0 80px rgba(200,255,0,0.1);
-        }
-        .hero h1 {
-            margin: 0;
-        }
-        .button-row {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        .button {
-            flex: 1;
-            padding: 10px;
-            border-radius: 14px;
-            text-align: center;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .button-primary {
-            background-color: #C8FF00;
-            color: #0F0F0E;
-        }
-        .button-secondary {
-            background-color: #1C1C1A;
-            color: rgba(255,255,255,0.5);
-        }
-        .button:hover {
-            opacity: 0.9;
-        }
-        .info-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .card {
-            background-color: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 20px;
-            padding: 15px;
-            transition: background-color 0.3s;
-        }
-        .card:hover {
-            background-color: rgba(255,255,255,0.08);
-        }
-        .about {
-            margin-bottom: 20px;
-        }
-        a {
-            color: #C8FF00;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            text-align: center;
-            font-size: 12px;
-            color: rgba(255,255,255,0.5);
-        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #faf9f9; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .drawer-transition { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .overlay-transition { transition: opacity 0.3s ease; }
     </style>
 </head>
-<body>
-    <div class="container fade-in">
-        <header>
-            <div class="avatar">TI</div>
-            <div>Trupa inspektuese për Tahograf Kienzle</div>
-            <div class="badge">Business</div>
-        </header>
-        <div class="hero">
-            <h1>Ensuring Safe Travels</h1>
-            <p>Your trusted expert in tachograph inspection</p>
-        </div>
-        <div class="button-row">
-            <div class="button button-primary">Learn More</div>
-            <div class="button button-secondary">Contact Us</div>
-        </div>
-        <div class="info-cards">
-            <div class="card">
-                📍 Address: <a href="https://www.google.com/maps?q=address" target="_blank" rel="noopener">Find us on Google Maps</a>
-            </div>
-            <div class="card">
-                🕒 Hours: 9:00 AM - 5:00 PM
-            </div>
-            <div class="card">
-                📞 Phone/Email: <a href="mailto:info@kienzle-ks.com">info@kienzle-ks.com</a>
-            </div>
-        </div>
-        <div class="about card">
-            <p>Welcome to Kienzle, your go-to destination for professional and reliable tachograph inspections. Our team is committed to ensuring your vehicle's compliance with all necessary regulations, delivering peace of mind for safe travels.</p>
-        </div>
-        <div class="footer">
-            Powered by DigitalFrame
-        </div>
-    </div>
-</body>
-</html>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-container-margin h-tap-target-min bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-high transition-colors active:scale-95" onclick="toggleDrawer()">menu</button>
+<img alt="Kienzle Logo" class="h-8 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLv-wlmTN2rmCv873foou36neFLtwCe1zeLGMsIKWqsxBdHUVYkMeHmn5XjT_7EUq8hvM9en297vQvvYmqKglBb-x7BNW6h4XTUTfVRyQKBWnkiMMrbzCVacUo3O9QjS4ALIVdiicJn3CKU8Z76oixCvP8hdWDOQMJ6yKmFgYb3GWKBJlJB8u2hW1S9rPJ8wEQRUmfgNKNc8fIGy3kjwmm09qMek48o5QueUJ39sTooWbh1FrDoWf8x7SA"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary active:scale-95 transition-transform duration-100">account_circle</span>
+</div>
+</header>
+<!-- NavigationDrawer (Mobile/Tablet Shell) -->
+<div class="fixed inset-0 bg-black/50 z-[60] hidden overlay-transition" id="drawer-overlay" onclick="toggleDrawer()"></div>
+<aside class="fixed top-0 left-0 h-full w-80 bg-surface z-[70] drawer-transition -translate-x-full shadow-lg flex flex-col py-4" id="nav-drawer">
+<div class="px-6 py-4 border-b border-outline-variant mb-4">
+<h2 class="text-headline-lg-mobile font-bold text-primary">Trupa Inspektuese Kienzle</h2>
+</div>
+<nav class="flex-1 overflow-y-auto px-2">
+<ul class="space-y-1">
+<!-- Navigation Items -->
+<li><a class="flex items-center gap-4 px-4 py-3 bg-primary-container text-on-primary-container font-bold rounded-r-full" href="#"><span class="material-symbols-outlined">home</span> Home</a></li>
+<li><a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">build</span> Inspektimi</a></li>
+<li><a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">fact_check</span> Metodat e inspektimit</a></li>
+<li><a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">image</span> Galeria</a></li>
+<li><a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">event_available</span> Termin Online</a></li>
+<li><a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">mail</span> Kontakt</a></li>
+<li><a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">history</span> Historiku</a></li>
+</ul>
+</nav>
+</aside>
+<main class="mt-tap-target-min pb-24">
+<!-- Hero Section -->
+<section class="relative h-[240px] md:h-[400px] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvWtuFCRedPHb9JHMetqTHmvTvQA89Ysq72Gz45WnleJUtGvhoHw1OEZqrNm9cGGFsAr7Xva64adbxTkQLYPiy6G0SYA767YWcJAdKxvrD9whmc6ch7e294lbyQc-J2zAsGW9YuDS114KAbMHgrEb4MmUwY6zXUl03211e1RMGQyDZftansjxakSYugKjPyZX8_iDoLrBnJJXO39m8qjw3t6DciFOUUKxXbRjZMXJ9l1XjcvWeDsdyh6Q')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-industrial-black/80 to-transparent flex items-end p-container-margin">
+<h1 class="text-white font-headline-xl text-headline-xl max-w-lg mb-4">Trupa inspektuese për tahograf Kienzle</h1>
+</div>
+</section>
+<!-- Welcome Message -->
+<section class="px-container-margin py-stack-lg bg-surface-lowest">
+<div class="max-w-4xl mx-auto space-y-stack-md">
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-primary border-l-4 border-primary pl-4">Mirë se vini në Trupen inspektuese për tahograf Kienzle!</h2>
+<p class="text-body-md font-body-md text-secondary leading-relaxed">
+                    Trupa inspektuese për tahograf Kienzle është e specializuar për kalibrimin e tahografëve, duke ofruar zgjidhje të besueshme dhe të qëndrueshme për klientët tanë. Ne jemi të përkushtuar për të siguruar që çdo tahograf që ne kalibrojmë të jetë i saktë dhe i besueshëm, duke ju ndihmuar të mbani floten tuaj në rrugë dhe në përputhje me rregulloret.
+                </p>
+<p class="text-body-md font-body-md text-secondary leading-relaxed">
+                    Ekipi ynë ka përvojë të gjatë në fushën për kalibrimin e tahografëve dhe është i përkushtuar për të ofruar shërbime të larta cilësore. Ne jemi krenarë për aftësinë tonë për të ndihmuar klientët tanë të arritur objektivat e tyre dhe të ruajnë sigurinë në rrugë.
+                </p>
+</div>
+</section>
+<!-- Service Cards (Bento Style) -->
+<section class="px-container-margin py-stack-lg space-y-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Analog Card -->
+<div class="bg-surface-container-low border border-outline-variant p-5 rounded-lg flex flex-col gap-4 group transition-all duration-300 hover:shadow-lg">
+<div class="h-48 overflow-hidden rounded-lg">
+<img alt="Analog Tachographs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvg13DrOpZZ3K-dTHXWrBvH0txtU0_2rgp8ARcz5ncH8eJM55ZZLsVDVZ4grqdIBHBDfQAMet5LSuLoDDWJxR8F0rIbawejFpU78KprvvGWohWIq7MCtj692dY_WR3Ifh4Eiad66ePDcjklC0Y-3nyUkmDIIH18H4KAkoXECYBxqAWWXZhXHtSYn0rOlTx2jMHqh_WA-FgnPdTQ0XYeGN-Mr-uwvn8EJWyqXjscU_xXIA8yR3sMVtFJbA"/>
+</div>
+<div>
+<span class="text-label-bold font-label-bold text-primary mb-1 block">KATEGORIA</span>
+<h3 class="text-headline-lg font-headline-lg text-industrial-black">Tahografa Analog</h3>
+<p class="text-body-md font-body-md text-secondary mt-2">Kalibrim i saktë dhe mirëmbajtje për pajisjet tradicionale analoge.</p>
+</div>
+</div>
+<!-- Digital Card -->
+<div class="bg-surface-container-low border border-outline-variant p-5 rounded-lg flex flex-col gap-4 group transition-all duration-300 hover:shadow-lg">
+<div class="h-48 overflow-hidden rounded-lg">
+<img alt="Digital Tachographs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLtp8VGV-D-DzI35lBnYBx23dAvpfcwl7vF4M92-fGpNnYVHpCkLcFRjGphVlWsaxgzvc8gzXmdrqjYB6YVFmsUFagDJcO0rJmnmOBze5cvlADtdXvwVyYhKth89YkVg-IEimb0avLJoDULVTZI8Fc1xxns0k-qBn40GQ1LPRhuKnhCQhIwsvLy--Xoybzy7p38-xwNmwa_aQKUnXuX74oE0sJ46EdCFSXJ68jUAwMgmFBrZwRfLnS_Low"/>
+</div>
+<div>
+<span class="text-label-bold font-label-bold text-primary mb-1 block">TEKNOLOGJIA</span>
+<h3 class="text-headline-lg font-headline-lg text-industrial-black">Aparatura Digjitale</h3>
+<p class="text-body-md font-body-md text-secondary mt-2">Zgjidhje moderne për testimin dhe konfigurimin e flotes digjitale.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-container-margin py-stack-lg">
+<div class="bg-industrial-black p-stack-lg rounded-xl flex flex-col items-center text-center gap-stack-md">
+<h3 class="text-white font-headline-lg text-headline-lg">Gati për kalibrim?</h3>
+<p class="text-secondary-fixed-dim font-body-md">Rezervoni terminin tuaj online tani për një shërbim të shpejtë dhe profesional.</p>
+<a class="bg-primary hover:bg-surface-tint text-white px-8 py-4 rounded-lg font-bold transition-all active:scale-95 shadow-sm" href="#">
+                    Termin Online
+                </a>
+</div>
+</section>
+<!-- Signature -->
+<section class="px-container-margin py-stack-md italic text-center text-on-surface-variant font-body-md">
+            "Me respekt, Trupa inspektuese Kienzle"
+        </section>
+<!-- Quick Connect (Social Targets) -->
+<section class="px-container-margin py-stack-lg flex flex-col gap-stack-sm">
+<a class="flex items-center justify-center gap-3 bg-success-whatsapp text-white py-4 rounded-lg font-bold active:scale-95 transition-transform" href="https://api.whatsapp.com/send?phone=38344113580">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+                WhatsApp
+            </a>
+<a class="flex items-center justify-center gap-3 bg-brand-facebook text-white py-4 rounded-lg font-bold active:scale-95 transition-transform" href="https://facebook.com/profile.php?id=61555940320523">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                Facebook
+            </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-container-margin py-stack-lg flex flex-col items-center gap-stack-md bg-industrial-black text-white mb-16">
+<div class="flex flex-col items-center gap-4 text-center">
+<img alt="Kienzle Logo Footer" class="h-10 brightness-0 invert opacity-80" src="https://lh3.googleusercontent.com/aida/AP1WRLv-wlmTN2rmCv873foou36neFLtwCe1zeLGMsIKWqsxBdHUVYkMeHmn5XjT_7EUq8hvM9en297vQvvYmqKglBb-x7BNW6h4XTUTfVRyQKBWnkiMMrbzCVacUo3O9QjS4ALIVdiicJn3CKU8Z76oixCvP8hdWDOQMJ6yKmFgYb3GWKBJlJB8u2hW1S9rPJ8wEQRUmfgNKNc8fIGy3kjwmm09qMek48o5QueUJ39sTooWbh1FrDoWf8x7SA"/>
+<p class="text-body-md font-body-md opacity-70">Zgjidhje precize për kalibrimin e flotes tuaj.</p>
+</div>
+<div class="flex gap-6 text-label-sm font-label-sm text-secondary-fixed-dim">
+<a class="hover:text-primary transition-colors" href="#">WhatsApp</a>
+<a class="hover:text-primary transition-colors" href="#">Facebook</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+</div>
+<p class="text-label-sm font-label-sm opacity-50 border-t border-white/10 pt-6 w-full text-center">
+            © 2001 - 2025 Trupa inspektuese per Tahograf Kienzle. Të gjitha të drejtat e rezervuara.
+        </p>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-2 bg-surface border-t border-outline-variant shadow-sm md:hidden">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-high transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="text-label-sm font-label-sm">Inspektimi</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-high transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-label-sm font-label-sm">Termin</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-high transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="text-label-sm font-label-sm">Galeria</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-high transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="text-label-sm font-label-sm">Kontakt</span>
+</a>
+</nav>
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('nav-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const isHidden = drawer.classList.contains('-translate-x-full');
+            
+            if (isHidden) {
+                drawer.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                drawer.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+    </script>
+</body></html>
